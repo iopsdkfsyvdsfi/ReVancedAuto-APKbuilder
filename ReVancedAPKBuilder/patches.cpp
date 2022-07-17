@@ -97,10 +97,6 @@ void patchesExclude()
 
         pInput patchInput{};
 
-       // Patches pHideInfoCardSuggestions{ hideInfoCardSuggestions };
-       // Patches pVideoAds{ videoAds };
-       // Patches pGeneralAds{ generalAds };
-
         conColor(10);
         std::cout << "\t\t|------------------------------------------------------------------|\n";
         std::cout << "\t\t| patch list - use 'e' to exclude patch | use 'i' to include patch |\n";
@@ -281,17 +277,6 @@ void patchesExclude()
 
     conColor(8);
     system(patchCmds.c_str());
-
-    Sleep(1000);
-
-    conColor(7);
-    std::cout << "\n\n\t Move 'revanced.apk' and 'microg.apk' to your phone and then install both.";
-
-    Sleep(1000);
-
-    conColor(8);
-    std::cout << "\nPress enter to exit the console";
-    (void)getchar();
 
     std::remove("python - 3.10.5 - amd64");
     std::remove("revancedIntegrations.apk");

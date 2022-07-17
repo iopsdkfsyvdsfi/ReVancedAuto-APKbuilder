@@ -80,17 +80,14 @@ void lvMain()
 	{
 		conColor(8);
 		std::system("python -m ensurepip --default-pip");
-		Sleep(3000);
 
 		conColor(8);
 		std::cout << ("\t\t\npip install lastversion\n");
-		Sleep(3000);
 
 		std::system("pip install lastversion");
 
 		conColor(3);
 		std::cout << "\n- Installing latest ReVanced files into target directory";
-		Sleep(2000);
 
 		std::system("lastversion --assets download https://github.com/iopsdkfsyvdsfi/revanced-patches/releases -o revancedPatches.jar"); // use my repo temporaily for lastversion
 		std::system("lastversion --assets download https://github.com/revanced/revanced-cli/releases -o revancedCLI.jar");
@@ -103,9 +100,11 @@ void lvMain()
 		{
 			std::cout << "\n\n\tStarting revanced.apk compilation process\n";
 
+			conColor(14);
 			std::cout << "\nExclude certain patches?(y/n): ";
 			std::cin >> input;
 
+			std::cout << '\n';
 			if (input == 'y')
 			{
 				patchesExclude();
@@ -128,10 +127,10 @@ void lvMain()
 			}
 		}
 
-		Sleep(1000);
-
 		conColor(7);
 		std::cout << "\n\n\t Move 'revanced.apk' and 'microg.apk' to your phone and then install both.";
+
+		Sleep(1000);
 
 		conColor(8);
 		std::cout << "\nPress enter to exit the console";

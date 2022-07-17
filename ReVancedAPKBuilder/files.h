@@ -9,13 +9,13 @@ void switchFile(int x);
 
 namespace Files
 {
-    static const wchar_t* srcRevancedCLI;
+    static const wchar_t* srcRevancedCLI; // default install
     static const wchar_t* destRevancedCLI;
 
-    static const wchar_t* srcRevancedPatches;
+    static const wchar_t* srcRevancedPatches; // default install
     static const wchar_t* destRevancedPatches;
 
-    static const wchar_t* srcRevancedIntegrations;
+    static const wchar_t* srcRevancedIntegrations; // default install
     static const wchar_t* destRevancedIntegrations;
 
     static const wchar_t* srcYoutubeAPK;

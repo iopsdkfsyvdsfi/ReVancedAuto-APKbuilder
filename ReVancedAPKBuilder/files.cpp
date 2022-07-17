@@ -45,8 +45,6 @@ void switchFile(int fileList)
 		std::cout << "\t\nFiles saved in destination target folder.\n";
 		break;
 
-		Sleep(100000);
-
 	case 2:
 		conColor(8);
 		std::cout << "\t\n- Downloading Azul Zulu JDK (17.0.3+7)";
