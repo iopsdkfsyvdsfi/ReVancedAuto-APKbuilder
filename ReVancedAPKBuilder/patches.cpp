@@ -87,6 +87,7 @@ std::string_view getPatchName(Patches patches)
         case returnYoutubeDislikes: return "Return YouTube Dislikes: ";
         case disableFullscreenPanels: return "Disable Fullscreen Panels: ";
         case hideShortsButton: return "Hide Shorts Button: ";
+        case disableCreateButton: return "Disable Create Button: ";
         case hideWatermark: return "Hide Watermark: ";
     }
 }
