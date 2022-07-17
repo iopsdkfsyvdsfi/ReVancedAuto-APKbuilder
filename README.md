@@ -17,4 +17,4 @@ REQUIREMENTS:
 - JDK 17 https://cdn.azul.com/zulu/bin/zulu17.34.19-ca-jdk17.0.3-win_x64.msi
 
 Make sure when installing Python that you check 'ADD TO PATH' in the installer
-![Python Installer](https://github.com/iopsdkfsyvdsfi/ReVancedAuto-APK/blob/main/image.png)
+![Python Installer](https://github.com/iopsdkfsyvdsfi/ReVancedAuto-APKbuilder/blob/main/image.png)
