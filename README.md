@@ -1,6 +1,6 @@
 Extremely basic program to compile a ReVanced .apk file for non root devices
 
-This downloads all default patches along with the --experimental argument.
+This downloads all default patches along with the --experimental argument unless you manually exclude patches
 	
 	> java -jar revancedCLI.jar -a youtube.apk -c -o revanced.apk -b revancedPatches.jar -m revancedIntegrations.apk -e background-play -e exclusive-audio-playback -e codecs-unlock -e upgrade-button-remover -e tasteBuilder-remover --experimental
 
