@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Files">
+      <UniqueIdentifier>{16c090c4-f0cc-41b8-a277-5d7e0647b15f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\main">
+      <UniqueIdentifier>{39763b25-eeaf-4801-808a-bf14b2363cb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Error Input Handling">
+      <UniqueIdentifier>{65b24548-4144-431c-9063-bd141898dee1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\AutoUpdate">
+      <UniqueIdentifier>{f247286c-2cd4-4b53-af42-695d8420b167}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\conColor">
+      <UniqueIdentifier>{9142e5a6-5d8c-4df0-acca-c5a9ab0512bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\patches">
+      <UniqueIdentifier>{1a0b69d3-21e6-4fdc-a25c-3d813a42e9d2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="files.cpp">
+      <Filter>Source Files\Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ReVancedAPKBuilder.cpp">
+      <Filter>Source Files\main</Filter>
+    </ClCompile>
+    <ClCompile Include="errorInputHandling.cpp">
+      <Filter>Source Files\Error Input Handling</Filter>
+    </ClCompile>
+    <ClCompile Include="lastVersionPort.cpp">
+      <Filter>Source Files\AutoUpdate</Filter>
+    </ClCompile>
+    <ClCompile Include="patches.cpp">
+      <Filter>Source Files\patches</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="files.h">
+      <Filter>Source Files\Files</Filter>
+    </ClInclude>
+    <ClInclude Include="errorInputHandling.h">
+      <Filter>Source Files\Error Input Handling</Filter>
+    </ClInclude>
+    <ClInclude Include="lastVersionPort.h">
+      <Filter>Source Files\AutoUpdate</Filter>
+    </ClInclude>
+    <ClInclude Include="consoleColor.h">
+      <Filter>Source Files\conColor</Filter>
+    </ClInclude>
+    <ClInclude Include="patches.h">
+      <Filter>Source Files\patches</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ReVancedAPKBuilder.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
