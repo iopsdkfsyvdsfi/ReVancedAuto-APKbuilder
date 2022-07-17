@@ -4,9 +4,6 @@ This downloads all default patches along with the --experimental argument.
 	
 	> java -jar revancedCLI.jar -a youtube.apk -c -o revanced.apk -b revancedPatches.jar -m revancedIntegrations.apk -e background-play -e exclusive-audio-playback -e codecs-unlock -e upgrade-button-remover -e tasteBuilder-remover --experimental
 
-
-There is no option to exclude patches with this program. You should use a different builder if you are looking for that.
-
 BTC: 3PQV5bxZvZnFVcfjU8yw2VCFykXyjvzYb3
 
 ETH: 0xF1EF0e449CFd8Cf051338Cabe1424c67a4754D3d
