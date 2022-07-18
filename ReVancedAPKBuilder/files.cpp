@@ -18,7 +18,7 @@ void switchFile(int fileList)
 	};
 
 	// Youtube APK
-	srcFiles[3] = L"https://github.com/iopsdkfsyvdsfi/ReVancedAuto-APK/raw/main/youtube.apk";
+	srcFiles[3] = L"https://github.com/iopsdkfsyvdsfi/youtube-apk2/raw/main/youtube.apk";
 	destFiles[3] = L"youtube.apk";
 
 	// MicroG APK
@@ -36,7 +36,7 @@ void switchFile(int fileList)
 	switch (fileList)
 	{
 	case 1:
-		std::cout << "\t\n- Downloading YouTube 17.26.35.apk";
+		std::cout << "\t\n- Downloading YouTube 17.27.39.apk";
 		URLDownloadToFile(NULL, srcFiles[3], destFiles[3], 0, NULL);
 
 		std::cout << "\t\n- Downloading Vanced MicroG (0.2.24.220220)";
@@ -62,7 +62,7 @@ void switchFile(int fileList)
 
 	case 4:
 		conColor(8);
-		std::cout << "\t\n- Downloading YouTube 17.26.35.apk";
+		std::cout << "\t\n- Downloading YouTube 17.27.39.apk";
 		URLDownloadToFile(NULL, srcFiles[3], destFiles[3], 0, NULL);
 
 		conColor(8);

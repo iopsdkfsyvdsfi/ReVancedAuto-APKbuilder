@@ -33,6 +33,7 @@ struct pInput
     char p21;
     char p22;
     char p23;
+    char p24;
 };
 
 enum Patches
@@ -59,7 +60,8 @@ enum Patches
     disableFullscreenPanels,
     hideShortsButton,
     disableCreateButton,
-    hideWatermark
+    hideWatermark,
+    sponsorblock
 };
 
 std::string_view getPatchName(Patches patches)
@@ -89,6 +91,7 @@ std::string_view getPatchName(Patches patches)
         case hideShortsButton: return "Hide Shorts Button: ";
         case disableCreateButton: return "Disable Create Button: ";
         case hideWatermark: return "Hide Watermark: ";
+        case sponsorblock: return "Sponsorblock ";
     }
 }
 
@@ -263,6 +266,13 @@ void patchesExclude()
 
         if (patchInput.p23 == 'e' || patchInput.p23 == 'E')
             patchCmds += " -e hide-watermark";
+
+        std::cout << "Exclude [24] | ";
+        std::cout << getPatchName(sponsorblock);
+        std::cin >> patchInput.p24;
+
+        if (patchInput.p24 == 'e' || patchInput.p24 == 'E')
+            patchCmds += " -e sponsorblock";
 
     conColor(12);
     std::cout << "\t\t\t\nThe following argument will be used\n";
