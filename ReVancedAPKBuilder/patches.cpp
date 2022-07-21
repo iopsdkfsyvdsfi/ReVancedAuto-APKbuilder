@@ -237,7 +237,7 @@ void patchesExclude()
         std::cin >> patchInput.p19;
 
         if (patchInput.p19 == 'e' || patchInput.p19 == 'E')
-            patchCmds += " -e return-youtube-dislikes";
+            patchCmds += " -e return-youtube-dislike";
 
         std::cout << "Exclude [20] | ";
         std::cout << getPatchName(disableFullscreenPanels);
