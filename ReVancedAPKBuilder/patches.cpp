@@ -34,6 +34,8 @@ struct pInput
     char p22;
     char p23;
     char p24;
+    char p25;
+    char p26;
 };
 
 enum Patches
@@ -61,7 +63,9 @@ enum Patches
     hideShortsButton,
     disableCreateButton,
     hideWatermark,
-    sponsorblock
+    sponsorblock,
+    forceVP9Codec,
+    experimental
 };
 
 std::string_view getPatchName(Patches patches)
@@ -91,13 +95,15 @@ std::string_view getPatchName(Patches patches)
         case hideShortsButton: return "Hide Shorts Button: ";
         case disableCreateButton: return "Disable Create Button: ";
         case hideWatermark: return "Hide Watermark: ";
-        case sponsorblock: return "Sponsorblock ";
+        case sponsorblock: return "Sponsorblock: ";
+        case forceVP9Codec: return "Force VP9 Codec: ";
+        case experimental: return "Use --experimental: ";
     }
 }
 
 void patchesExclude()
 {
-    std::string patchCmds{ "java -jar revancedCLI.jar -a youtube.apk -c -o revanced.apk -b revancedPatches.jar -m revancedIntegrations.apk -e background-play -e exclusive-audio-playback -e codecs-unlock -e upgrade-button-remover -e tasteBuilder-remover" };
+    std::string patchCmds{ "java -jar revancedCLI.jar -a youtube.apk -c -o revanced.apk -b revancedPatches.jar -m revancedIntegrations.apk -e background-play -e exclusive-audio-playback -e codecs-unlock -e upgrade-button-remover -e tasteBuilder-remover -e minimized-playback-music -e hide-get-premium -e music-video-ads" };
 
         pInput patchInput{};
 
@@ -273,6 +279,23 @@ void patchesExclude()
 
         if (patchInput.p24 == 'e' || patchInput.p24 == 'E')
             patchCmds += " -e sponsorblock";
+
+        std::cout << "Exclude [25] | ";
+        std::cout << getPatchName(forceVP9Codec);
+        std::cin >> patchInput.p25;
+
+        if (patchInput.p25 == 'e' || patchInput.p25 == 'E')
+            patchCmds += " -e force-vp9-codec";
+
+        if (patchInput.p25 == 'i' || patchInput.p25 == 'I')
+            patchCmds += " -i force-vp9-codec";
+
+        std::cout << "Exclude [26] | ";
+        std::cout << getPatchName(experimental);
+        std::cin >> patchInput.p26;
+
+        if (patchInput.p26 == 'i' || patchInput.p26 == 'I')
+            patchCmds += " --experimental";
 
     conColor(12);
     std::cout << "\t\t\t\nThe following argument will be used\n";
