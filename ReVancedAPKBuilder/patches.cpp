@@ -161,6 +161,9 @@ void patchesExclude()
         if (patchInput.p7 == 'e' || patchInput.p7 == 'E')
             patchCmds += " -e hdr-auto-brightness";
 
+        if (patchInput.p7 == 'i' || patchInput.p7 == 'I')
+            patchCmds += " -i hdr-auto-brightness";
+
         std::cout << "Exclude [8] | ";
         std::cout << getPatchName(autoRepeatByDefault);
         std::cin >> patchInput.p8;
