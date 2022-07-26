@@ -21,6 +21,9 @@ namespace Files
     static const wchar_t* srcYoutubeAPK;
     static const wchar_t* destYoutubeAPK;
 
+    static const wchar_t* srcYoutubeMusicAPK;
+    static const wchar_t* destYoutubeMusicAPK;
+
     static const wchar_t* srcMicroGAPK;
     static const wchar_t* destMicroGAPK;
 

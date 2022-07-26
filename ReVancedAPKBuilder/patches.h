@@ -2,5 +2,6 @@
 #define PATCHES_H
 
 void patchesExclude();
+void ytmPatchesExclude();
 
 #endif

@@ -11,6 +11,7 @@
 struct pInput
 {
     char p[27];
+    char pMusic[10];
 };
 
 enum Patches
@@ -43,6 +44,20 @@ enum Patches
     experimental
 };
 
+enum ytmPatches
+{
+    minimizedPlaybackMusic,
+    tasteBuilderRemover,
+    hideGetPremium,
+    compactHeader,
+    upgradeButtonRemover,
+    backgroundPlay,
+    musicMicroGSupport,
+    musicVideoAds,
+    codecsUnlock,
+    exclusiveAudioPlayback
+};
+
 std::string_view getPatchName(Patches patches)
 {
     switch (patches)
@@ -73,6 +88,23 @@ std::string_view getPatchName(Patches patches)
         case sponsorblock: return "Sponsorblock: ";
         case forceVP9Codec: return "Force VP9 Codec: ";
         case experimental: return "Use --experimental: ";
+    }
+}
+
+std::string_view getYTMPatchNames(ytmPatches ytmPatches)
+{
+    switch (ytmPatches)
+    {
+    case minimizedPlaybackMusic: return "Minimized Playback Music: ";
+    case tasteBuilderRemover: return "Tastebuiler Remover: ";
+    case hideGetPremium: return "Hide Get Premium: ";
+    case compactHeader: return "Compact Header: ";
+    case upgradeButtonRemover: return "Upgrade Button Remover: ";
+    case backgroundPlay: return "Background Play: ";
+    case musicMicroGSupport: return "YTM MicroG Support: ";
+    case musicVideoAds: return "YTM Video Ads: ";
+    case codecsUnlock: return "Codecs Unlock: ";
+    case exclusiveAudioPlayback: return "Exclusive Audio Playback: ";
     }
 }
 
@@ -297,5 +329,26 @@ void patchesExclude()
     std::remove("zulu17.34.19-ca.jdk17.0.3=win_x64.msi");
     std::remove("youtube.apk");
 
+    exit(1);
+}
+
+void ytmPatchesExclude()
+{
+    std::string patchCmds{ "java -jar revancedCLI.jar -a youtubemusic.apk -c -o revanced.apk -b revancedPatches.jar -m revancedIntegrations.apk -i background-play -i exclusive-audio-playback -i codecs-unlock -i upgrade-button-remover -i tasteBuilder-remover -i minimized-playback-music -i hide-get-premium -i music-video-ads, -i music-microg-support" };
+
+    conColor(12);
+    std::cout << "\t\t\t\nThe following argument will be used\n";
+    std::cout << "\t\t-------------------------------------\n";
+    std::cout << patchCmds << ' ' << '\n';
+
+    conColor(4);
+    std::cout << "\t\t\n[!] Do not click inside the command console during this process.\n";
+    std::cout << "\t\t  [!] Do not exit the command console while the APK is compiling.\n\n";
+    std::cout << "This will take approximately 3-5 minutes to build.\n";
+
+    std::cout << '\n' << '\n';
+
+    conColor(8);
+    system(patchCmds.c_str());
     exit(1);
 }

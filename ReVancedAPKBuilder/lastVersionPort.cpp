@@ -16,6 +16,7 @@ void lvMain()
 {
 	bool bBuild{ false };
 	bool bJavaContinue{ false };
+	int selector{};
 
 	std::cout << "\nReVanced APK Builder uses (lastversion 2.4.5) to automatically download latest ReVanced files.\n";
 	std::cout << "In order for lastversion to be compatible with your system, you must have Python installed.\n";
@@ -93,6 +94,16 @@ void lvMain()
 		std::system("lastversion --assets download https://github.com/revanced/revanced-cli/releases -o revancedCLI.jar");
 		std::system("lastversion --assets download https://github.com/revanced/revanced-integrations/releases -o revancedIntegrations.apk");
 		
+		std::cout << "(1) YouTube (2) YouTube Music: ";
+		std::cin >> selector;
+
+		if (selector == 2)
+		{
+			switchFile(5);
+			ytmPatchesExclude();
+		}
+
+		else
 		// youtube.apk
 		switchFile(4);
 
@@ -109,8 +120,6 @@ void lvMain()
 			{
 				patchesExclude();
 			}
-
-			else
 
 			conColor(4);
 			std::cout << "\t\t\n[!] Do not click inside the command console during this process.\n";

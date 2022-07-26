@@ -5,7 +5,7 @@
   ReVancedAPKBuilder.cpp
   Generating code
   Previous IPDB not found, fall back to full compilation.
-X:\ReVancedAuto APK\ReVancedAPKBuilder\patches.cpp(77): warning C4715: 'getPatchName': not all control paths return a value
-  All 133 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+X:\ReVancedAuto APK\ReVancedAPKBuilder\patches.cpp(92): warning C4715: 'getPatchName': not all control paths return a value
+  All 134 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   ReVancedAPKBuilder.vcxproj -> X:\ReVancedAuto APK\Release\ReVancedAPKBuilder.exe

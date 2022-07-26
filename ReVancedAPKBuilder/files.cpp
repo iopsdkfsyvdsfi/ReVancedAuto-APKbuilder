@@ -5,16 +5,18 @@
 
 void switchFile(int fileList)
 {
-	static const wchar_t* srcFiles[7]
+	static const wchar_t* srcFiles[8]
 	{
 		Files::srcRevancedCLI, Files::srcRevancedPatches, Files::srcRevancedIntegrations,
-		Files::srcYoutubeAPK, Files::srcMicroGAPK, Files::srcAzulJDK, Files::srcPythonInstall
+		Files::srcYoutubeAPK, Files::srcMicroGAPK, Files::srcAzulJDK, Files::srcPythonInstall,
+		Files::srcYoutubeMusicAPK
 	};
 
-	static const wchar_t* destFiles[7]
+	static const wchar_t* destFiles[8]
 	{
 		Files::destRevancedCLI, Files::srcRevancedPatches, Files::srcRevancedIntegrations,
-		Files::srcYoutubeAPK, Files::srcMicroGAPK, Files::destAzulJDK, Files::destPythonInstall
+		Files::srcYoutubeAPK, Files::srcMicroGAPK, Files::destAzulJDK, Files::destPythonInstall,
+		Files::destYoutubeMusicAPK
 	};
 
 	// Youtube APK
@@ -32,6 +34,10 @@ void switchFile(int fileList)
 	// Python Install
 	srcFiles[6] = L"https://www.python.org/ftp/python/3.10.5/python-3.10.5-amd64.exe";
 	destFiles[6] = L"python-3.10.5-amd64";
+
+	// Youtube Music
+	srcFiles[7] = L"https://github.com/iopsdkfsyvdsfi/youtube-apk2/raw/main/youtubemusic.apk";
+	destFiles[7] = L"youtubemusic.apk";
 
 	switch (fileList)
 	{
@@ -68,7 +74,16 @@ void switchFile(int fileList)
 		conColor(8);
 		std::cout << "\t\n- Downloading Vanced MicroG (0.2.24.220220)";
 		URLDownloadToFile(NULL, srcFiles[4], destFiles[4], 0, NULL);
+		break;
 
+	case 5:
+		conColor(8);
+		std::cout << "\t\n- Download YouTube Music 5.16.61";
+		URLDownloadToFile(NULL, srcFiles[7], destFiles[7], 0, NULL);
+
+		conColor(8);
+		std::cout << "\t\n- Downloading Vanced MicroG (0.2.24.220220)";
+		URLDownloadToFile(NULL, srcFiles[4], destFiles[4], 0, NULL);
 		break;
 
 	default:
