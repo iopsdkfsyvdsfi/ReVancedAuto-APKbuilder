@@ -94,7 +94,7 @@ void lvMain()
 		std::system("lastversion --assets download https://github.com/revanced/revanced-cli/releases -o revancedCLI.jar");
 		std::system("lastversion --assets download https://github.com/revanced/revanced-integrations/releases -o revancedIntegrations.apk");
 		
-		std::cout << "(1) YouTube (2) YouTube Music: ";
+		std::cout << "\n(1) YouTube (2) YouTube Music: ";
 		std::cin >> selector;
 
 		if (selector == 2)

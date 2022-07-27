@@ -10,8 +10,8 @@
 
 struct pInput
 {
-    char p[27];
-    char pMusic[10];
+    char p[28];
+    char pMusic[11];
 };
 
 enum Patches
@@ -23,7 +23,7 @@ enum Patches
     swipeControls,
     microgSupport,
     hdrAutoBrightness,
-    autoRepeatByDefault,
+    alwaysAutorepeat,
     customPlaybackSpeed,
     enableDebugging,
     oldQualityLayout,
@@ -41,6 +41,7 @@ enum Patches
     hideWatermark,
     sponsorblock,
     forceVP9Codec,
+    rememberVideoQuality,
     experimental
 };
 
@@ -69,7 +70,7 @@ std::string_view getPatchName(Patches patches)
         case swipeControls: return "Swipe Controls: ";
         case microgSupport: return "MicroG Support: ";
         case hdrAutoBrightness: return "HDR Auto Brightness: ";
-        case autoRepeatByDefault: return "Auto Repeat By Default: ";
+        case alwaysAutorepeat: return "Auto Repeat By Default: ";
         case customPlaybackSpeed: return "Custom Playback Speed: ";
         case enableDebugging: return "Enable Debugging: ";
         case oldQualityLayout: return "Old Quality Layout: ";
@@ -87,7 +88,8 @@ std::string_view getPatchName(Patches patches)
         case hideWatermark: return "Hide Watermark: ";
         case sponsorblock: return "Sponsorblock: ";
         case forceVP9Codec: return "Force VP9 Codec: ";
-        case experimental: return "Use --experimental: ";
+        case rememberVideoQuality: return "Remember Video Quality: ";
+        case experimental: return "Experimental: ";
     }
 }
 
@@ -172,11 +174,11 @@ void patchesExclude()
             patchCmds += " -i hdr-auto-brightness";
 
         std::cout << "Exclude [8] | ";
-        std::cout << getPatchName(autoRepeatByDefault);
+        std::cout << getPatchName(alwaysAutorepeat);
         std::cin >> patchInput->p[8];
 
         if (patchInput->p[8] == 'e' || patchInput->p[8] == 'E')
-            patchCmds += " -e autorepeat-by-default";
+            patchCmds += " -e always-autorepeat";
 
         std::cout << "Exclude [9] | ";
         std::cout << getPatchName(customPlaybackSpeed);
@@ -301,10 +303,17 @@ void patchesExclude()
             patchCmds += " -i force-vp9-codec";
 
         std::cout << "Exclude [26] | ";
-        std::cout << getPatchName(experimental);
+        std::cout << getPatchName(rememberVideoQuality);
         std::cin >> patchInput->p[26];
 
-        if (patchInput->p[26] == 'i' || patchInput->p[26] == 'I')
+        if (patchInput->p[26] == 'e' || patchInput->p[26] == 'E')
+            patchCmds += " -e remember-video-quality";
+
+        std::cout << "Exclude [27] | ";
+        std::cout << getPatchName(experimental);
+        std::cin >> patchInput->p[27];
+
+        if (patchInput->p[27] == 'i' || patchInput->p[27] == 'I')
             patchCmds += " --experimental";
 
     conColor(12);
@@ -334,6 +343,140 @@ void patchesExclude()
 
 void ytmPatchesExclude()
 {
+    conColor(3);
+    std::cout << "\n\nExclude YTM Patches?(y/n): ";
+    std::cin >> input;
+
+    pInput ytmPatches[10]{};
+
+    if (input == 'y' || input == 'Y')
+    {
+       // std::string patchCmds{ "java -jar revancedCLI.jar -a youtubemusic.apk -c -o revanced.apk -b revancedPatches.jar -m revancedIntegrations.apk" };
+        std::string patchCmds{ "java -jar revancedCLI.jar -a youtubemusic.apk -c -o revanced.apk -b revancedPatches.jar -m revancedIntegrations.apk -e swipe-controls -e seekbar-tapping -e minimized-playback -e amoled -e disable-create-button -e hide-cast-button -e return-youtube-dislike -e hide-autoplay-button -e premium-heading -e custom-branding -e disable-fullscreen-panels -e old-quality-layout -e hide-shorts-button -e hide-watermark -e sponsorblock -e enable-wide-searchbar -e force-vp9-codec -e always-autorepeat -e microg-support -e enable-debugging -e custom-playback-speed -e hdr-auto-brightness -e remember-video-quality -e video-ads -e general-ads -e hide-infocard-suggestions" };
+        std::cout << '\n';
+
+        conColor(10);
+        std::cout << "\t\t|------------------------------------------------------------------|\n";
+        std::cout << "\t\t| patch list - use 'e' to exclude patch | use 'i' to include patch |\n";
+        std::cout << "\t\t|------------------------------------------------------------------|\n";
+
+        std::cout << "Exclude [1] | ";
+        std::cout << getYTMPatchNames(minimizedPlaybackMusic);
+        std::cin >> ytmPatches->pMusic[0];
+
+        if (ytmPatches->pMusic[0] == 'e' || ytmPatches->pMusic[0] == 'E')
+            patchCmds += " -e minimized-playback-music";
+        else
+            patchCmds += " -i minimized-playback-music";
+
+        std::cout << "Exclude [2] | ";
+        std::cout << getYTMPatchNames(tasteBuilderRemover);
+        std::cin >> ytmPatches->pMusic[1];
+
+        if (ytmPatches->pMusic[1] == 'e' || ytmPatches->pMusic[2] == 'E')
+            patchCmds += " -e tasteBuilder-remover";
+        else
+            patchCmds += " -i tasteBuilder-remover";
+
+        std::cout << "Exclude [3] | ";
+        std::cout << getYTMPatchNames(hideGetPremium);
+        std::cin >> ytmPatches->pMusic[3];
+
+        if (ytmPatches->pMusic[3] == 'e' || ytmPatches->pMusic[3] == 'E')
+            patchCmds += " -e hide-get-premium";
+        else
+            patchCmds += " -i hide-get-premium";
+
+
+        std::cout << "Exclude [4] | ";
+        std::cout << getYTMPatchNames(compactHeader);
+        std::cin >> ytmPatches->pMusic[4];
+
+        if (ytmPatches->pMusic[4] == 'e' || ytmPatches->pMusic[4] == 'E')
+            patchCmds += " -e compact-header";
+        else
+            patchCmds += " -i compact-header";
+
+        std::cout << "Exclude [5] | ";
+        std::cout << getYTMPatchNames(upgradeButtonRemover);
+        std::cin >> ytmPatches->pMusic[5];
+
+        if (ytmPatches->pMusic[5] == 'e' || ytmPatches->pMusic[5] == 'E')
+            patchCmds += " -e upgrade-button-remover";
+        else
+            patchCmds += " -i upgrade-button-remover";
+
+        std::cout << "Exclude [6] | ";
+        std::cout << getYTMPatchNames(backgroundPlay);
+        std::cin >> ytmPatches->pMusic[6];
+
+        if (ytmPatches->pMusic[6] == 'e' || ytmPatches->pMusic[6] == 'E')
+            patchCmds += " -e background-play";
+        else
+            patchCmds += " -i background-play";
+
+        std::cout << "Exclude [7] | ";
+        std::cout << getYTMPatchNames(musicMicroGSupport);
+        std::cin >> ytmPatches->pMusic[7];
+
+        if (ytmPatches->pMusic[7] == 'e' || ytmPatches->pMusic[7] == 'E')
+            patchCmds += " -e music-microg-support";
+        else
+            patchCmds += " -i music-microg-support";
+
+        std::cout << "Exclude [8] | ";
+        std::cout << getYTMPatchNames(musicVideoAds);
+        std::cin >> ytmPatches->pMusic[8];
+
+        if (ytmPatches->pMusic[8] == 'e' || ytmPatches->pMusic[8] == 'E')
+            patchCmds += " -e music-video-ads";
+        else
+            patchCmds += " -i music-video-ads";
+
+        std::cout << "Exclude [9] | ";
+        std::cout << getYTMPatchNames(codecsUnlock);
+        std::cin >> ytmPatches->pMusic[9];
+
+        if (ytmPatches->pMusic[9] == 'e' || ytmPatches->pMusic[9] == 'E')
+            patchCmds += " -e codecs-unlock";
+        else
+            patchCmds += " -i codecs-unlock";
+
+        std::cout << "Exclude [10] | ";
+        std::cout << getYTMPatchNames(exclusiveAudioPlayback);
+        std::cin >> ytmPatches->pMusic[10];
+
+        if (ytmPatches->pMusic[10] == 'e' || ytmPatches->pMusic[10] == 'E')
+            patchCmds += " -e exclusive-audio-playback";
+        else
+            patchCmds += " -i exclusive-audio-playback";
+
+        conColor(12);
+        std::cout << "\t\t\t\nThe following argument will be used\n";
+        std::cout << "\t\t-------------------------------------\n";
+        std::cout << patchCmds << ' ' << '\n';
+
+        conColor(4);
+        std::cout << "\t\t\n[!] Do not click inside the command console during this process.\n";
+        std::cout << "\t\t  [!] Do not exit the command console while the APK is compiling.\n\n";
+        std::cout << "This will take approximately a few minutes to build.\n";
+
+        std::cout << '\n' << '\n';
+
+        conColor(8);
+        system(patchCmds.c_str());
+
+        std::remove("python - 3.10.5 - amd64");
+        std::remove("revancedIntegrations.apk");
+        std::remove("revancedCLI.jar");
+        std::remove("revancedPatches.jar");
+        std::remove("zulu17.34.19-ca.jdk17.0.3=win_x64.msi");
+        std::remove("youtubemusic.apk");
+
+        exit(1);
+    }
+   
+    // default 
     std::string patchCmds{ "java -jar revancedCLI.jar -a youtubemusic.apk -c -o revanced.apk -b revancedPatches.jar -m revancedIntegrations.apk -i background-play -i exclusive-audio-playback -i codecs-unlock -i upgrade-button-remover -i tasteBuilder-remover -i minimized-playback-music -i hide-get-premium -i music-video-ads, -i music-microg-support" };
 
     conColor(12);
@@ -344,11 +487,19 @@ void ytmPatchesExclude()
     conColor(4);
     std::cout << "\t\t\n[!] Do not click inside the command console during this process.\n";
     std::cout << "\t\t  [!] Do not exit the command console while the APK is compiling.\n\n";
-    std::cout << "This will take approximately 3-5 minutes to build.\n";
+    std::cout << "This will take approximately a few minutes to build.\n";
 
     std::cout << '\n' << '\n';
 
     conColor(8);
     system(patchCmds.c_str());
+
+    std::remove("python - 3.10.5 - amd64");
+    std::remove("revancedIntegrations.apk");
+    std::remove("revancedCLI.jar");
+    std::remove("revancedPatches.jar");
+    std::remove("zulu17.34.19-ca.jdk17.0.3=win_x64.msi");
+    std::remove("youtubemusic.apk");
+
     exit(1);
 }
