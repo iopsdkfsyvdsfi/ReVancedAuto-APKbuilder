@@ -4,6 +4,7 @@
 #include <Windows.h>
 
 #include "files.h"
+#include "errorInputHandling.h"
 #include "lastVersionPort.h"
 #include "consoleColor.h"
 #include "patches.h"
@@ -343,9 +344,14 @@ void patchesExclude()
 
 void ytmPatchesExclude()
 {
-    conColor(3);
-    std::cout << "\n\nExclude ReVanced YouTube Music Patches? (y/n): ";
-    std::cin >> input;
+    do
+    {
+        conColor(3);
+        std::cout << "\n\nExclude ReVanced YouTube Music Patches? (y/n): ";
+        std::cin >> input;
+        ignoreLine();
+
+    } while (input != 'y' && input != 'Y' && input != 'n' && input != 'N');
 
     pInput ytmPatches[10]{};
 
