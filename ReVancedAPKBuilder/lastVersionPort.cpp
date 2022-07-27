@@ -93,9 +93,15 @@ void lvMain()
 		std::system("lastversion --assets download https://github.com/iopsdkfsyvdsfi/revanced-patches/releases -o revancedPatches.jar"); // use my repo temporaily for lastversion
 		std::system("lastversion --assets download https://github.com/revanced/revanced-cli/releases -o revancedCLI.jar");
 		std::system("lastversion --assets download https://github.com/revanced/revanced-integrations/releases -o revancedIntegrations.apk");
-		
-		std::cout << "\n(1) YouTube (2) YouTube Music: ";
-		std::cin >> selector;
+
+		do
+		{
+			std::cout << "\n(1) - YouTube | (2) - YouTube Music: ";
+			std::cin >> selector;
+			std::cin.clear();
+			ignoreLine();
+
+		} while (selector != 1 && selector != 2 );
 
 		if (selector == 2)
 		{
@@ -111,9 +117,14 @@ void lvMain()
 		{
 			std::cout << "\n\n\tStarting revanced.apk compilation process\n";
 
-			conColor(14);
-			std::cout << "\nExclude certain patches?(y/n): ";
-			std::cin >> input;
+			do
+			{
+				conColor(14);
+				std::cout << "\nExclude certain patches?(y/n): ";
+				std::cin >> input;
+				ignoreLine();
+
+			} while (input != 'y' && input != 'Y' && input != 'n' && input != 'N');
 
 			std::cout << '\n';
 			if (input == 'y')

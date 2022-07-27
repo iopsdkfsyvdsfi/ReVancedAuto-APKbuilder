@@ -42,7 +42,7 @@ void switchFile(int fileList)
 	switch (fileList)
 	{
 	case 1:
-		std::cout << "\t\n- Downloading YouTube 17.27.39.apk";
+		std::cout << "\t\n- Downloading YouTube 17.29.34.apk";
 		URLDownloadToFile(NULL, srcFiles[3], destFiles[3], 0, NULL);
 
 		std::cout << "\t\n- Downloading Vanced MicroG (0.2.24.220220)";
@@ -68,7 +68,7 @@ void switchFile(int fileList)
 
 	case 4:
 		conColor(8);
-		std::cout << "\t\n- Downloading YouTube 17.27.39.apk";
+		std::cout << "\t\n- Downloading YouTube 17.29.34.apk";
 		URLDownloadToFile(NULL, srcFiles[3], destFiles[3], 0, NULL);
 
 		conColor(8);
