@@ -108,7 +108,7 @@ void lvMain()
 			switchFile(5);
 			ytmPatchesExclude();
 		}
-
+		
 		else
 		// youtube.apk
 		switchFile(4);

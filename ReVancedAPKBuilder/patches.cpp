@@ -11,8 +11,8 @@
 
 struct pInput
 {
-    char p[28];
-    char pMusic[11];
+   char p[28];
+   char pMusic[12];
 };
 
 enum Patches
@@ -43,7 +43,6 @@ enum Patches
     sponsorblock,
     forceVP9Codec,
     rememberVideoQuality,
-    experimental
 };
 
 enum ytmPatches
@@ -90,7 +89,6 @@ std::string_view getPatchName(Patches patches)
         case sponsorblock: return "Sponsorblock: ";
         case forceVP9Codec: return "Force VP9 Codec: ";
         case rememberVideoQuality: return "Remember Video Quality: ";
-        case experimental: return "Experimental: ";
     }
 }
 
@@ -125,48 +123,55 @@ void patchesExclude()
         std::cout << "\nExclude [1] | ";
         std::cout << getPatchName(hideInfoCardSuggestions);
         std::cin >> patchInput->p;
+        ignoreLine();
 
         if (patchInput->p[0] == 'e' || patchInput->p[0] == 'E')
             patchCmds += " -e hide-infocard-suggestions";
 
         std::cout << "Exclude [2] | ";
         std::cout << getPatchName(videoAds);
-        std::cin >> patchInput->p[2];
+        std::cin >> patchInput->p;
+        ignoreLine();
 
         if (patchInput->p[2] == 'e' || patchInput->p[2] == 'E')
             patchCmds += " -e video-ads";
 
         std::cout << "Exclude [3] | ";
         std::cout << getPatchName(generalAds);
-        std::cin >> patchInput->p[3];
+        std::cin >> patchInput->p;
+        ignoreLine();
 
         if (patchInput->p[3] == 'e' || patchInput->p[3] == 'E')
             patchCmds += " -e general-ads";
 
         std::cout << "Exclude [4] | ";
         std::cout << getPatchName(seekbarTapping);
-        std::cin >> patchInput->p[4];
+        std::cin >> patchInput->p;
+        ignoreLine();
 
         if (patchInput->p[4] == 'e' || patchInput->p[4] == 'E')
             patchCmds += " -e seekbar-tapping";
 
         std::cout << "Exclude [5] | ";
         std::cout << getPatchName(swipeControls);
-        std::cin >> patchInput->p[5];
+        std::cin >> patchInput->p;
+        ignoreLine();
 
         if (patchInput->p[5] == 'e' || patchInput->p[5] == 'E')
             patchCmds += " -e swipe-controls";
 
         std::cout << "Exclude [6] | ";
         std::cout << getPatchName(microgSupport);
-        std::cin >> patchInput->p[6];
+        std::cin >> patchInput->p;
+        ignoreLine();
 
         if (patchInput->p[6] == 'e' || patchInput->p[6] == 'E')
             patchCmds += " -e microg-support";
 
         std::cout << "Exclude [7] | ";
         std::cout << getPatchName(hdrAutoBrightness);
-        std::cin >> patchInput->p[7];
+        std::cin >> patchInput->p;
+        ignoreLine();
 
         if (patchInput->p[7] == 'e' || patchInput->p[7] == 'E')
             patchCmds += " -e hdr-auto-brightness";
@@ -176,126 +181,144 @@ void patchesExclude()
 
         std::cout << "Exclude [8] | ";
         std::cout << getPatchName(alwaysAutorepeat);
-        std::cin >> patchInput->p[8];
+        std::cin >> patchInput->p;
+        ignoreLine();
 
         if (patchInput->p[8] == 'e' || patchInput->p[8] == 'E')
             patchCmds += " -e always-autorepeat";
 
         std::cout << "Exclude [9] | ";
         std::cout << getPatchName(customPlaybackSpeed);
-        std::cin >> patchInput->p[9];
+        std::cin >> patchInput->p;
+        ignoreLine();
 
         if (patchInput->p[9] == 'e' || patchInput->p[9] == 'E')
             patchCmds += " -e custom-playback-speed";
 
         std::cout << "Exclude [10] | ";
         std::cout << getPatchName(enableDebugging);
-        std::cin >> patchInput->p[10];
+        std::cin >> patchInput->p;
+        ignoreLine();
    
         if (patchInput->p[10] == 'e' || patchInput->p[10] == 'E')
             patchCmds += " -e enable-debugging";
 
         std::cout << "Exclude [11] | ";
         std::cout << getPatchName(oldQualityLayout);
-        std::cin >> patchInput->p[11];
+        std::cin >> patchInput->p;
+        ignoreLine();
 
-        if (patchInput->p[11] == 'y' || patchInput->p[11] == 'Y')
+        if (patchInput->p[11] == 'e' || patchInput->p[11] == 'E')
             patchCmds += " -e old-quality-layout";
 
         std::cout << "Exclude [12] | ";
         std::cout << getPatchName(hideCastButton);
-        std::cin >> patchInput->p[12];
+        std::cin >> patchInput->p;
+        ignoreLine();
 
         if (patchInput->p[12] == 'e' || patchInput->p[12] == 'E')
             patchCmds += " -e hide-cast-button";
 
         std::cout << "Exclude [13] | ";
         std::cout << getPatchName(amoled);
-        std::cin >> patchInput->p[13];
+        std::cin >> patchInput->p;
+        ignoreLine();
 
         if (patchInput->p[13] == 'e' || patchInput->p[13] == 'E')
             patchCmds += " -e amoled";
 
         std::cout << "Exclude [14] | ";
         std::cout << getPatchName(hideAutoplayButton);
-        std::cin >> patchInput->p[14];
+        std::cin >> patchInput->p;
+        ignoreLine();
 
         if (patchInput->p[14] == 'e' || patchInput->p[14] == 'E')
             patchCmds += " -e hide-autoplay-button";
 
         std::cout << "Exclude [15] | ";
         std::cout << getPatchName(minimizedPlayback);
-        std::cin >> patchInput->p[15];
+        std::cin >> patchInput->p;
+        ignoreLine();
 
         if (patchInput->p[15] == 'e' || patchInput->p[15] == 'E')
             patchCmds += " -e minimized-playback";
 
         std::cout << "Exclude [16] | ";
         std::cout << getPatchName(premiumHeading);
-        std::cin >> patchInput->p[16];
+        std::cin >> patchInput->p;
+        ignoreLine();
 
         if (patchInput->p[16] == 'e' || patchInput->p[16] == 'E')
             patchCmds += " -e premium-heading";
 
         std::cout << "Exclude [17] | ";
         std::cout << getPatchName(customBranding);
-        std::cin >> patchInput->p[17];
+        std::cin >> patchInput->p;
+        ignoreLine();
 
         if (patchInput->p[17] == 'e' || patchInput->p[17] == 'E')
             patchCmds += " -e custom-branding";
 
         std::cout << "Exclude [18] | ";
         std::cout << getPatchName(enableWideSearchbar);
-        std::cin >> patchInput->p[18];
+        std::cin >> patchInput->p;
+        ignoreLine();
 
         if (patchInput->p[18] == 'e' || patchInput->p[18] == 'E')
             patchCmds += " -e enable-wide-searchbar";
 
         std::cout << "Exclude [19] | ";
         std::cout << getPatchName(returnYoutubeDislikes);
-        std::cin >> patchInput->p[19];
+        std::cin >> patchInput->p;
+        ignoreLine();
 
         if (patchInput->p[19] == 'e' || patchInput->p[19] == 'E')
             patchCmds += " -e return-youtube-dislike";
 
         std::cout << "Exclude [20] | ";
         std::cout << getPatchName(disableFullscreenPanels);
-        std::cin >> patchInput->p[20];
+        std::cin >> patchInput->p;
+        ignoreLine();
 
         if (patchInput->p[20] == 'e' || patchInput->p[20] == 'E')
             patchCmds += " -e disable-fullscreen-panels";
 
         std::cout << "Exclude [21] | ";
         std::cout << getPatchName(hideShortsButton);
-        std::cin >> patchInput->p[21];
+        std::cin >> patchInput->p;
+        ignoreLine();
 
         if (patchInput->p[21] == 'e' || patchInput->p[21] == 'E')
             patchCmds += " -e hide-shorts-button";
 
         std::cout << "Exclude [22] | ";
         std::cout << getPatchName(disableCreateButton);
-        std::cin >> patchInput->p[22];
+        std::cin >> patchInput->p;
+        ignoreLine();
 
         if (patchInput->p[22] == 'e' || patchInput->p[22] == 'E')
             patchCmds += " -e disable-create-button";
 
         std::cout << "Exclude [23] | ";
         std::cout << getPatchName(hideWatermark);
-        std::cin >> patchInput->p[23];
+        std::cin >> patchInput->p;
+        ignoreLine();
 
         if (patchInput->p[23] == 'e' || patchInput->p[23] == 'E')
             patchCmds += " -e hide-watermark";
 
         std::cout << "Exclude [24] | ";
         std::cout << getPatchName(sponsorblock);
-        std::cin >> patchInput->p[24];
+        std::cin >> patchInput->p;
+        ignoreLine();
 
         if (patchInput->p[24] == 'e' || patchInput->p[24] == 'E')
             patchCmds += " -e sponsorblock";
 
         std::cout << "Exclude [25] | ";
         std::cout << getPatchName(forceVP9Codec);
-        std::cin >> patchInput->p[25];
+        std::cin >> patchInput->p;
+        ignoreLine();
 
         if (patchInput->p[25] == 'e' || patchInput->p[25] == 'E')
             patchCmds += " -e force-vp9-codec";
@@ -305,17 +328,11 @@ void patchesExclude()
 
         std::cout << "Exclude [26] | ";
         std::cout << getPatchName(rememberVideoQuality);
-        std::cin >> patchInput->p[26];
+        std::cin >> patchInput->p;
+        ignoreLine();
 
         if (patchInput->p[26] == 'e' || patchInput->p[26] == 'E')
             patchCmds += " -e remember-video-quality";
-
-        std::cout << "Exclude [27] | ";
-        std::cout << getPatchName(experimental);
-        std::cin >> patchInput->p[27];
-
-        if (patchInput->p[27] == 'i' || patchInput->p[27] == 'I')
-            patchCmds += " --experimental";
 
     conColor(12);
     std::cout << "\t\t\t\nThe following argument will be used\n";
@@ -368,7 +385,8 @@ void ytmPatchesExclude()
 
         std::cout << "Exclude [1] | ";
         std::cout << getYTMPatchNames(minimizedPlaybackMusic);
-        std::cin >> ytmPatches->pMusic[0];
+        std::cin >> ytmPatches->pMusic;
+        ignoreLine();
 
         if (ytmPatches->pMusic[0] == 'e' || ytmPatches->pMusic[0] == 'E')
             patchCmds += " -e minimized-playback-music";
@@ -377,7 +395,8 @@ void ytmPatchesExclude()
 
         std::cout << "Exclude [2] | ";
         std::cout << getYTMPatchNames(tasteBuilderRemover);
-        std::cin >> ytmPatches->pMusic[1];
+        std::cin >> ytmPatches->pMusic;
+        ignoreLine();
 
         if (ytmPatches->pMusic[1] == 'e' || ytmPatches->pMusic[2] == 'E')
             patchCmds += " -e tasteBuilder-remover";
@@ -386,7 +405,8 @@ void ytmPatchesExclude()
 
         std::cout << "Exclude [3] | ";
         std::cout << getYTMPatchNames(hideGetPremium);
-        std::cin >> ytmPatches->pMusic[3];
+        std::cin >> ytmPatches->pMusic;
+        ignoreLine();
 
         if (ytmPatches->pMusic[3] == 'e' || ytmPatches->pMusic[3] == 'E')
             patchCmds += " -e hide-get-premium";
@@ -396,7 +416,8 @@ void ytmPatchesExclude()
 
         std::cout << "Exclude [4] | ";
         std::cout << getYTMPatchNames(compactHeader);
-        std::cin >> ytmPatches->pMusic[4];
+        std::cin >> ytmPatches->pMusic;
+        ignoreLine();
 
         if (ytmPatches->pMusic[4] == 'e' || ytmPatches->pMusic[4] == 'E')
             patchCmds += " -e compact-header";
@@ -405,7 +426,8 @@ void ytmPatchesExclude()
 
         std::cout << "Exclude [5] | ";
         std::cout << getYTMPatchNames(upgradeButtonRemover);
-        std::cin >> ytmPatches->pMusic[5];
+        std::cin >> ytmPatches->pMusic;
+        ignoreLine();
 
         if (ytmPatches->pMusic[5] == 'e' || ytmPatches->pMusic[5] == 'E')
             patchCmds += " -e upgrade-button-remover";
@@ -414,7 +436,8 @@ void ytmPatchesExclude()
 
         std::cout << "Exclude [6] | ";
         std::cout << getYTMPatchNames(backgroundPlay);
-        std::cin >> ytmPatches->pMusic[6];
+        std::cin >> ytmPatches->pMusic;
+        ignoreLine();
 
         if (ytmPatches->pMusic[6] == 'e' || ytmPatches->pMusic[6] == 'E')
             patchCmds += " -e background-play";
@@ -423,7 +446,8 @@ void ytmPatchesExclude()
 
         std::cout << "Exclude [7] | ";
         std::cout << getYTMPatchNames(musicMicroGSupport);
-        std::cin >> ytmPatches->pMusic[7];
+        std::cin >> ytmPatches->pMusic;
+        ignoreLine();
 
         if (ytmPatches->pMusic[7] == 'e' || ytmPatches->pMusic[7] == 'E')
             patchCmds += " -e music-microg-support";
@@ -432,7 +456,8 @@ void ytmPatchesExclude()
 
         std::cout << "Exclude [8] | ";
         std::cout << getYTMPatchNames(musicVideoAds);
-        std::cin >> ytmPatches->pMusic[8];
+        std::cin >> ytmPatches->pMusic;
+        ignoreLine();
 
         if (ytmPatches->pMusic[8] == 'e' || ytmPatches->pMusic[8] == 'E')
             patchCmds += " -e music-video-ads";
@@ -441,7 +466,7 @@ void ytmPatchesExclude()
 
         std::cout << "Exclude [9] | ";
         std::cout << getYTMPatchNames(codecsUnlock);
-        std::cin >> ytmPatches->pMusic[9];
+        std::cin >> ytmPatches->pMusic;
 
         if (ytmPatches->pMusic[9] == 'e' || ytmPatches->pMusic[9] == 'E')
             patchCmds += " -e codecs-unlock";
@@ -450,7 +475,7 @@ void ytmPatchesExclude()
 
         std::cout << "Exclude [10] | ";
         std::cout << getYTMPatchNames(exclusiveAudioPlayback);
-        std::cin >> ytmPatches->pMusic[10];
+        std::cin >> ytmPatches->pMusic;
 
         if (ytmPatches->pMusic[10] == 'e' || ytmPatches->pMusic[10] == 'E')
             patchCmds += " -e exclusive-audio-playback";
@@ -483,9 +508,9 @@ void ytmPatchesExclude()
     }
    
     // default 
-    std::string patchCmds{ "java -jar revancedCLI.jar -a youtubemusic.apk -c -o revancedmusic.apk -b revancedPatches.jar -m revancedIntegrations.apk -e swipe-controls -e seekbar-tapping -e minimized-playback -e amoled -e disable-create-button -e hide-cast-button -e return-youtube-dislike -e hide-autoplay-button -e premium-heading -e custom-branding -e disable-fullscreen-panels -e old-quality-layout -e hide-shorts-button -e hide-watermark -e sponsorblock -e enable-wide-searchbar -e force-vp9-codec -e always-autorepeat -e microg-support -e enable-debugging -e custom-playback-speed -e hdr-auto-brightness -e remember-video-quality -e video-ads -e general-ads -e hide-infocard-suggestions -e timeline-ads -e general-reddit-ads -i background-play -i exclusive-audio-playback -i codecs-unlock -i upgrade-button-remover -i tasteBuilder-remover -i minimized-playback-music -i hide-get-premium -i music-video-ads -i music-microg-support -i compact-header" };
-
+    std::string patchCmds{ "java -jar revancedCLI.jar -a youtubemusic.apk -c -o revancedmusic.apk -b revancedPatches.jar -e swipe-controls -e seekbar-tapping -e minimized-playback -e amoled -e disable-create-button -e hide-cast-button -e return-youtube-dislike -e hide-autoplay-button -e premium-heading -e custom-branding -e disable-fullscreen-panels -e old-quality-layout -e hide-shorts-button -e hide-watermark -e sponsorblock -e enable-wide-searchbar -e force-vp9-codec -e always-autorepeat -e microg-support -e enable-debugging -e custom-playback-speed -e hdr-auto-brightness -e remember-video-quality -e video-ads -e general-ads -e hide-infocard-suggestions -e timeline-ads -e general-reddit-ads -i background-play -i exclusive-audio-playback -i codecs-unlock -i upgrade-button-remover -i tasteBuilder-remover -i minimized-playback-music -i hide-get-premium -i music-video-ads -i music-microg-support -i compact-header" };
     conColor(12);
+
     std::cout << "\t\t\t\nThe following argument will be used\n";
     std::cout << "\t\t-------------------------------------\n";
     std::cout << patchCmds << ' ' << '\n';
