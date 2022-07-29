@@ -62,22 +62,24 @@ void lvMain()
 		std::cout << "\n\n[!] Complete the setup for 'zulu17.34.19-ca-jdk17.0.3-win_x64' (JDK 17)\n";
 
 		conColor(4);
-		std::cout << "\t\t[!] Do not continue until JDK is successfully installed. The compilation will fail otherwise\n";
+		std::cout << "\t\t[!] Do not continue until JDK is successfully installed. Restart ReVancedAPKBuilder after installation\n";
 
 		Sleep(3000);
 		conColor(3);
-		std::cout << "\n\nPress enter to continue";
-	}
+		std::cout << "\n\nPress enter to exit";
 
-	while (bJavaContinue == false)
-	{
-		if (GetAsyncKeyState(VK_RETURN) & 1)
-			bJavaContinue = !bJavaContinue;
+		while (bJavaContinue == false)
+		{
+			if (GetAsyncKeyState(VK_RETURN) & 1)
+				bJavaContinue = !bJavaContinue;
+		}
+
+		exit(0);
 	}
 
 	std::cout << '\n' << '\n';
 
-	if (input == 'y' || input == 'Y' || bJavaContinue == true)
+	if (input == 'y' || input == 'Y')
 	{
 		conColor(8);
 		std::system("python -m ensurepip --default-pip");
@@ -113,7 +115,7 @@ void lvMain()
 		// youtube.apk
 		switchFile(4);
 
-		if (bJavaContinue == true || input == 'y' || input == 'Y')
+		if (input == 'y' || input == 'Y')
 		{
 			std::cout << "\n\n\tStarting revanced.apk compilation process\n";
 
