@@ -59,7 +59,8 @@ void lvMain()
 		std::cout << "\n** Continue after JDK has been installed. Check taskbar for JDK installer popup. ( Minimize Console )";
 
 		conColor(14);
-		std::cout << "\n\nPress Enter to automatically restart ReVancedAPKBuilder.\n";
+		Sleep(2000);
+		std::cout << "\n\nPress Enter to automatically restart if both Python and JDK 17 have been successfully installed.\n";
 
 		while (bJavaContinue == false)
 		{

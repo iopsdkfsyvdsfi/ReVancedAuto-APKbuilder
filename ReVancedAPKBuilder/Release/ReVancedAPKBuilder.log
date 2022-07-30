@@ -6,8 +6,8 @@
   ReVancedAPKBuilder.cpp
   Generating code
   Previous IPDB not found, fall back to full compilation.
-C:\Users\PC\Downloads\ReVancedAuto-APKbuilder-main\ReVancedAPKBuilder\patches.cpp(110): warning C4715: 'getYTMPatchNames': not all control paths return a value
 C:\Users\PC\Downloads\ReVancedAuto-APKbuilder-main\ReVancedAPKBuilder\patches.cpp(93): warning C4715: 'getPatchName': not all control paths return a value
+C:\Users\PC\Downloads\ReVancedAuto-APKbuilder-main\ReVancedAPKBuilder\patches.cpp(110): warning C4715: 'getYTMPatchNames': not all control paths return a value
   All 117 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   ReVancedAPKBuilder.vcxproj -> C:\Users\PC\Downloads\ReVancedAuto-APKbuilder-main\Release\ReVancedAPKBuilder.exe
