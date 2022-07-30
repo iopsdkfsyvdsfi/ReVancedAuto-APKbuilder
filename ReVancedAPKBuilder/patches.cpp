@@ -382,7 +382,7 @@ void ytmPatchesExclude()
         std::cout << "\t\t| patch list - use 'e' to exclude patch | use 'i' to include patch |\n";
         std::cout << "\t\t|------------------------------------------------------------------|\n";
 
-        std::cout << "Exclude [1] | ";
+        std::cout << "\nExclude [1] | ";
         std::cout << getYTMPatchNames(minimizedPlaybackMusic);
         std::cin >> ytmPatches->pMusic[0];
         ignoreLine();
@@ -466,6 +466,7 @@ void ytmPatchesExclude()
         std::cout << "Exclude [9] | ";
         std::cout << getYTMPatchNames(codecsUnlock);
         std::cin >> ytmPatches->pMusic[8];
+        ignoreLine();
 
         if (ytmPatches->pMusic[8] == 'e' || ytmPatches->pMusic[8] == 'E')
             patchCmds += " -e codecs-unlock";
@@ -475,6 +476,7 @@ void ytmPatchesExclude()
         std::cout << "Exclude [10] | ";
         std::cout << getYTMPatchNames(exclusiveAudioPlayback);
         std::cin >> ytmPatches->pMusic[9];
+        ignoreLine();
 
         if (ytmPatches->pMusic[9] == 'e' || ytmPatches->pMusic[9] == 'E')
             patchCmds += " -e exclusive-audio-playback";
