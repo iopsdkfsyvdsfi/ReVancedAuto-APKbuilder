@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="programrestart">
-      <UniqueIdentifier>{73587207-e540-402b-9fa8-95290accb7d6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\ReVancedAPKBuilder">
       <UniqueIdentifier>{b92b4f0e-8633-466d-ad3f-ffca72289d77}</UniqueIdentifier>
     </Filter>
@@ -37,6 +34,9 @@
     <Filter Include="Source Files\ReVancedAPKBuilder\errorInputHandling">
       <UniqueIdentifier>{65b24548-4144-431c-9063-bd141898dee1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\ReVancedAPKBuilder\programrestart">
+      <UniqueIdentifier>{73587207-e540-402b-9fa8-95290accb7d6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="files.cpp">
@@ -55,7 +55,7 @@
       <Filter>Source Files\ReVancedAPKBuilder\patches</Filter>
     </ClCompile>
     <ClCompile Include="restartprogram.cpp">
-      <Filter>programrestart</Filter>
+      <Filter>Source Files\ReVancedAPKBuilder\programrestart</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -78,7 +78,7 @@
       <Filter>Source Files\ReVancedAPKBuilder\patches</Filter>
     </ClInclude>
     <ClInclude Include="restartprogram.h">
-      <Filter>programrestart</Filter>
+      <Filter>Source Files\ReVancedAPKBuilder\programrestart</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

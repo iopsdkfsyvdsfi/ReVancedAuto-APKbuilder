@@ -51,7 +51,7 @@ void lvMain()
 				bPythonContinue = !bPythonContinue;
 		}
 		(void)getchar();
-		std::cout << "\tRestarting..";
+		std::cout << "\tRestarting ReVancedAPKBuilder";
 		Sleep(1000);
 		pythonRestart("ReVancedAPKBuilder.exe");
 		exit(0);
@@ -100,7 +100,7 @@ void lvMain()
 				bJavaContinue = !bJavaContinue;
 		}
 
-		std::cout << "\tRestarting..";
+		std::cout << "\tRestarting ReVancedAPKBuilder";
 		Sleep(1000);
 		rProgram("ReVancedAPKBuilder.exe");
 		exit(0);
