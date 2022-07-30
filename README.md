@@ -20,7 +20,3 @@ REQUIREMENTS:
 
 Make sure when installing Python that you check 'ADD TO PATH' in the installer
 ![Python Installer](https://github.com/iopsdkfsyvdsfi/ReVancedAuto-APKbuilder/blob/main/image.png)
-
-
-https://user-images.githubusercontent.com/109194157/179404135-f8d10260-f021-4e48-a6a1-5e85ee9c9470.mp4
-
