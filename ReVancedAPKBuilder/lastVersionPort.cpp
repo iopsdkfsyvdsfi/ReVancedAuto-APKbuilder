@@ -17,7 +17,7 @@ void lvMain()
 {
 	bool bBuild{ false };
 	bool bJavaContinue{ false };
-	bool bPythonContinue{ false };
+
 	int selector{};
 
 	std::cout << "\nReVanced APK Builder uses (lastversion 2.4.5) to automatically download latest ReVanced files.\n";
@@ -25,74 +25,41 @@ void lvMain()
 	
 	do
 	{
-		std::cout << "\n\tIs Python already installed on your system? (y/n): ";
+		std::cout << "\n\tInstall Java and Python? (y/n): ";
 		std::cin >> input;
 		ignoreLine();
 
 	} while (input != 'y' && input != 'n');
 
-	if (input == 'n' || input == 'N')
+	if (input == 'y' || input == 'Y')
 	{
 		conColor(8);
 		switchFile(3);
 
-		std::cout << "\n\nSetup and install (Python 3.10.5)\n";
+		std::cout << "\nSetup and install (Python 3.10.5)\n";
 
 		conColor(4);
 		std::cout << "\n\n[!] Make sure to check 'Add Python 3.10 to PATH' in Python Installer\n";
 		std::cout << "\n** Do not continue unless Python is installed. The program will not work otherwise.\n";
 
-		conColor(8);
-		std::cout << "\n\nPress enter to automatically restart ReVancedAPKBuilder.\n";
+		conColor(14);
+		std::cout << "\n\nPress Enter to proceed with JDK installation.\n";
 
-		while (bPythonContinue == false)
-		{
-			if (GetAsyncKeyState(VK_RETURN) & 1)
-				bPythonContinue = !bPythonContinue;
-		}
-		(void)getchar();
-		std::cout << "\tRestarting ReVancedAPKBuilder";
-		Sleep(1000);
-		pythonRestart("ReVancedAPKBuilder.exe");
-		exit(0);
-
-		/* std::cout << "\n\nSetup and install (Python 3.10.5)\n";
-
-		conColor(4);
-		std::cout << "\n\n[!] Make sure to check 'Add Python 3.10 to PATH' in Python Installer\n";
-		std::cout << "Restart ReVancedAPKBuilder.exe after installing Python on your system.\n";
-
-		conColor(8);
-		std::cout << "\tPress enter to exit program";
 		(void)getchar();
 
-		std::exit(1);
-		*/
-	}
-
-	do
-	{
-		std::cout << "\n\tis JDK 17+ installed on your system? (y/n): ";
-		std::cin >> input;
-		ignoreLine();
-
-	} while (input != 'y' && input != 'n');
-
-	if (input == 'n' || input == 'N')
-	{
 		switchFile(2);
 
-		std::cout << "\n\n[!] Complete the setup for 'zulu17.34.19-ca-jdk17.0.3-win_x64' (JDK 17)\n";
+		std::cout << "\n\nComplete the setup for 'zulu17.34.19-ca-jdk17.0.3-win_x64' (JDK 17)\n";
 
 		conColor(4);
-		std::cout << "\t\t[!] Do not continue until JDK is successfully installed; the compilation will fail otherwise.\n";
+		std::cout << "\n[!] Do not continue until JDK is successfully installed; the compilation will fail otherwise.\n";
 
-		Sleep(3000);
-		conColor(3);
-		std::cout << "\n\n[!] Continue only once JDK has been installed. Check taskbar for JDK installation popup. ( Minimize Console )";
-		
+		Sleep(100);
 		conColor(4);
-		std::cout << "\n\nPress enter to automatically restart ReVancedAPKBuilder.\n";
+		std::cout << "\n** Continue after JDK has been installed. Check taskbar for JDK installer popup. ( Minimize Console )";
+
+		conColor(14);
+		std::cout << "\n\nPress Enter to automatically restart ReVancedAPKBuilder.\n";
 
 		while (bJavaContinue == false)
 		{
@@ -100,6 +67,7 @@ void lvMain()
 				bJavaContinue = !bJavaContinue;
 		}
 
+		conColor(8);
 		std::cout << "\tRestarting ReVancedAPKBuilder";
 		Sleep(1000);
 		rProgram("ReVancedAPKBuilder.exe");
@@ -108,7 +76,7 @@ void lvMain()
 
 	std::cout << '\n' << '\n';
 
-	if (input == 'y' || input == 'Y')
+	if (input == 'n' || input == 'N')
 	{
 		conColor(8);
 		std::system("python -m ensurepip --default-pip");
@@ -144,7 +112,7 @@ void lvMain()
 		// youtube.apk
 		switchFile(4);
 
-		if (input == 'y' || input == 'Y')
+		if (input == 'n' || input == 'N')
 		{
 			std::cout << "\n\n\tStarting revanced.apk compilation process\n";
 

@@ -363,7 +363,7 @@ void ytmPatchesExclude()
 {
     do
     {
-        conColor(3);
+        conColor(14);
         std::cout << "\n\nExclude ReVanced YouTube Music Patches? (y/n): ";
         std::cin >> input;
         ignoreLine();
