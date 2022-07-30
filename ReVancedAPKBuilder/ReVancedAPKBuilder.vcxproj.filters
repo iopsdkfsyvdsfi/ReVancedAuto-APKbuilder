@@ -37,6 +37,9 @@
     <Filter Include="Source Files\ReVancedAPKBuilder\programrestart">
       <UniqueIdentifier>{73587207-e540-402b-9fa8-95290accb7d6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\ReVancedAPKBuilder\javapython">
+      <UniqueIdentifier>{108f15d0-3dca-4d2f-bfa5-079ec0841d53}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="files.cpp">
@@ -56,6 +59,9 @@
     </ClCompile>
     <ClCompile Include="restartprogram.cpp">
       <Filter>Source Files\ReVancedAPKBuilder\programrestart</Filter>
+    </ClCompile>
+    <ClCompile Include="javapython.cpp">
+      <Filter>Source Files\ReVancedAPKBuilder\javapython</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +85,9 @@
     </ClInclude>
     <ClInclude Include="restartprogram.h">
       <Filter>Source Files\ReVancedAPKBuilder\programrestart</Filter>
+    </ClInclude>
+    <ClInclude Include="javapython.h">
+      <Filter>Source Files\ReVancedAPKBuilder\javapython</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

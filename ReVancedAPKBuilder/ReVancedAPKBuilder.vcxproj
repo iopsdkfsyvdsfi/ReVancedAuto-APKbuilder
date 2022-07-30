@@ -161,6 +161,7 @@
   <ItemGroup>
     <ClCompile Include="errorInputHandling.cpp" />
     <ClCompile Include="files.cpp" />
+    <ClCompile Include="javapython.cpp" />
     <ClCompile Include="lastVersionPort.cpp" />
     <ClCompile Include="patches.cpp" />
     <ClCompile Include="restartprogram.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="consoleColor.h" />
     <ClInclude Include="errorInputHandling.h" />
     <ClInclude Include="files.h" />
+    <ClInclude Include="javapython.h" />
     <ClInclude Include="lastVersionPort.h" />
     <ClInclude Include="patches.h" />
     <ClInclude Include="resource.h" />
