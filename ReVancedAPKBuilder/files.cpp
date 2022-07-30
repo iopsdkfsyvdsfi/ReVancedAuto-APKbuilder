@@ -5,48 +5,34 @@
 
 void switchFile(int fileList)
 {
-	static const wchar_t* srcFiles[8]
-	{
-		Files::srcRevancedCLI, Files::srcRevancedPatches, Files::srcRevancedIntegrations,
-		Files::srcYoutubeAPK, Files::srcMicroGAPK, Files::srcAzulJDK, Files::srcPythonInstall,
-		Files::srcYoutubeMusicAPK
-	};
-
-	static const wchar_t* destFiles[8]
-	{
-		Files::destRevancedCLI, Files::srcRevancedPatches, Files::srcRevancedIntegrations,
-		Files::srcYoutubeAPK, Files::srcMicroGAPK, Files::destAzulJDK, Files::destPythonInstall,
-		Files::destYoutubeMusicAPK
-	};
-
 	// Youtube APK
-	srcFiles[3] = L"https://github.com/iopsdkfsyvdsfi/youtube-apk2/raw/main/youtube.apk";
-	destFiles[3] = L"youtube.apk";
+	Files::srcYoutubeAPK = L"https://github.com/iopsdkfsyvdsfi/youtube-apk2/raw/main/youtube.apk";
+	Files::destYoutubeAPK = L"youtube.apk";
 
 	// MicroG APK
-	srcFiles[4] = L"https://github.com/TeamVanced/VancedMicroG/releases/latest/download/microg.apk";
-	destFiles[4] = L"microg.apk";
+	Files::srcMicroGAPK = L"https://github.com/TeamVanced/VancedMicroG/releases/latest/download/microg.apk";
+	Files::destMicroGAPK = L"microg.apk";
 
 	// Azul Zulu JDK
-	srcFiles[5] = L"https://cdn.azul.com/zulu/bin/zulu17.34.19-ca-jdk17.0.3-win_x64.msi";
-	destFiles[5] = L"zulu17.34.19-ca-jdk17.0.3-win_x64.msi";
+	Files::srcAzulJDK = L"https://cdn.azul.com/zulu/bin/zulu17.34.19-ca-jdk17.0.3-win_x64.msi";
+	Files::destAzulJDK = L"zulu17.34.19-ca-jdk17.0.3-win_x64.msi";
 
 	// Python Install
-	srcFiles[6] = L"https://www.python.org/ftp/python/3.10.5/python-3.10.5-amd64.exe";
-	destFiles[6] = L"python-3.10.5-amd64";
+	Files::srcPythonInstall = L"https://www.python.org/ftp/python/3.10.5/python-3.10.5-amd64.exe";
+	Files::destPythonInstall = L"python-3.10.5-amd64";
 
 	// Youtube Music
-	srcFiles[7] = L"https://github.com/iopsdkfsyvdsfi/youtube-apk2/raw/main/youtubemusic.apk";
-	destFiles[7] = L"youtubemusic.apk";
+	Files::srcYoutubeMusicAPK = L"https://github.com/iopsdkfsyvdsfi/youtube-apk2/raw/main/youtubemusic.apk";
+	Files::destYoutubeMusicAPK = L"youtubemusic.apk";
 
 	switch (fileList)
 	{
 	case 1:
 		std::cout << "\t\n- Downloading YouTube 17.29.34.apk";
-		URLDownloadToFile(NULL, srcFiles[3], destFiles[3], 0, NULL);
+		URLDownloadToFile(NULL, Files::srcYoutubeAPK, Files::destYoutubeAPK, 0, NULL);
 
 		std::cout << "\t\n- Downloading Vanced MicroG (0.2.24.220220)";
-		URLDownloadToFile(NULL, srcFiles[4], destFiles[4], 0, NULL);
+		URLDownloadToFile(NULL, Files::srcMicroGAPK, Files::destMicroGAPK, 0, NULL);
 
 		std::cout << "\t\nFiles saved in destination target folder.\n";
 		break;
@@ -55,35 +41,35 @@ void switchFile(int fileList)
 		conColor(8);
 		std::cout << "\t\n- Downloading Azul Zulu JDK (17.34.19)";
 
-		URLDownloadToFile(NULL, srcFiles[5], destFiles[5], 0, NULL);
+		URLDownloadToFile(NULL, Files::srcAzulJDK, Files::destAzulJDK, 0, NULL);
 		std::system("start zulu17.34.19-ca-jdk17.0.3-win_x64.msi");
 		break;
 
 	case 3:
 		std::cout << "\t\n- Downloading 'Python 3.10.5'\n";
 
-		URLDownloadToFile(NULL, srcFiles[6], destFiles[6], 0, NULL);
+		URLDownloadToFile(NULL, Files::srcPythonInstall, Files::destPythonInstall, 0, NULL);
 		std::system("start python-3.10.5-amd64");
 		break;
 
 	case 4:
 		conColor(8);
 		std::cout << "\t\n- Downloading YouTube 17.29.34.apk";
-		URLDownloadToFile(NULL, srcFiles[3], destFiles[3], 0, NULL);
+		URLDownloadToFile(NULL, Files::srcYoutubeAPK , Files::srcYoutubeAPK, 0, NULL);
 
 		conColor(8);
 		std::cout << "\t\n- Downloading Vanced MicroG (0.2.24.220220)";
-		URLDownloadToFile(NULL, srcFiles[4], destFiles[4], 0, NULL);
+		URLDownloadToFile(NULL, Files::srcMicroGAPK, Files::destMicroGAPK, 0, NULL);
 		break;
 
 	case 5:
 		conColor(8);
 		std::cout << "\t\n- Download YouTube Music 5.16.61";
-		URLDownloadToFile(NULL, srcFiles[7], destFiles[7], 0, NULL);
+		URLDownloadToFile(NULL, Files::srcYoutubeMusicAPK, Files::destYoutubeMusicAPK, 0, NULL);
 
 		conColor(8);
 		std::cout << "\t\n- Downloading Vanced MicroG (0.2.24.220220)";
-		URLDownloadToFile(NULL, srcFiles[4], destFiles[4], 0, NULL);
+		URLDownloadToFile(NULL, Files::srcMicroGAPK, Files::destMicroGAPK, 0, NULL);
 		break;
 
 	default:
