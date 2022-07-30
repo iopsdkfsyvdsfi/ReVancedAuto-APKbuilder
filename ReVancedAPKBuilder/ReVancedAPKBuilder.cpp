@@ -13,8 +13,8 @@ int main()
 	SetConsoleTitleA("revanced.apk Builder");
 
 	HWND rvHWND{ GetConsoleWindow() };
-	::SetWindowPos(rvHWND, HWND_TOPMOST, 0, 0, 0, 0, SWP_DRAWFRAME | SWP_NOMOVE | SWP_NOSIZE | SWP_SHOWWINDOW);
-	::ShowWindow(rvHWND, SW_NORMAL);
+	SetWindowPos(rvHWND, HWND_TOPMOST, 0, 0, 0, 0, SWP_DRAWFRAME | SWP_NOMOVE | SWP_NOSIZE | SWP_SHOWWINDOW);
+	ShowWindow(rvHWND, SW_NORMAL);
 
 	lvMain();
 }

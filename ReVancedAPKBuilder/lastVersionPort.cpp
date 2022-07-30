@@ -6,6 +6,7 @@
 #include "lastVersionPort.h"
 #include "consoleColor.h"
 #include "patches.h"
+#include "restartprogram.h"
 
 void conColor(uintptr_t menuColor)
 {
@@ -16,6 +17,7 @@ void lvMain()
 {
 	bool bBuild{ false };
 	bool bJavaContinue{ false };
+	bool bPythonContinue{ false };
 	int selector{};
 
 	std::cout << "\nReVanced APK Builder uses (lastversion 2.4.5) to automatically download latest ReVanced files.\n";
@@ -38,6 +40,26 @@ void lvMain()
 
 		conColor(4);
 		std::cout << "\n\n[!] Make sure to check 'Add Python 3.10 to PATH' in Python Installer\n";
+		std::cout << "\n** Do not continue unless Python is installed. The program will not work otherwise.\n";
+
+		conColor(8);
+		std::cout << "\n\nPress enter to automatically restart ReVancedAPKBuilder.\n";
+
+		while (bPythonContinue == false)
+		{
+			if (GetAsyncKeyState(VK_RETURN) & 1)
+				bPythonContinue = !bPythonContinue;
+		}
+		(void)getchar();
+		std::cout << "\tRestarting..";
+		Sleep(1000);
+		pythonRestart("ReVancedAPKBuilder.exe");
+		exit(0);
+
+		/* std::cout << "\n\nSetup and install (Python 3.10.5)\n";
+
+		conColor(4);
+		std::cout << "\n\n[!] Make sure to check 'Add Python 3.10 to PATH' in Python Installer\n";
 		std::cout << "Restart ReVancedAPKBuilder.exe after installing Python on your system.\n";
 
 		conColor(8);
@@ -45,6 +67,7 @@ void lvMain()
 		(void)getchar();
 
 		std::exit(1);
+		*/
 	}
 
 	do
@@ -62,11 +85,14 @@ void lvMain()
 		std::cout << "\n\n[!] Complete the setup for 'zulu17.34.19-ca-jdk17.0.3-win_x64' (JDK 17)\n";
 
 		conColor(4);
-		std::cout << "\t\t[!] Do not continue until JDK is successfully installed. Restart ReVancedAPKBuilder after installation\n";
+		std::cout << "\t\t[!] Do not continue until JDK is successfully installed; the compilation will fail otherwise.\n";
 
 		Sleep(3000);
 		conColor(3);
-		std::cout << "\n\nPress enter to exit";
+		std::cout << "\n\n[!] Continue only once JDK has been installed. Check taskbar for JDK installation popup. ( Minimize Console )";
+		
+		conColor(4);
+		std::cout << "\n\nPress enter to automatically restart ReVancedAPKBuilder.\n";
 
 		while (bJavaContinue == false)
 		{
@@ -74,6 +100,9 @@ void lvMain()
 				bJavaContinue = !bJavaContinue;
 		}
 
+		std::cout << "\tRestarting..";
+		Sleep(1000);
+		rProgram("ReVancedAPKBuilder.exe");
 		exit(0);
 	}
 
@@ -129,6 +158,8 @@ void lvMain()
 			} while (input != 'y' && input != 'Y' && input != 'n' && input != 'N');
 
 			std::cout << '\n';
+
+			// call patch exclude function
 			if (input == 'y')
 			{
 				patchesExclude();

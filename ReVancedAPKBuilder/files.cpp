@@ -53,7 +53,7 @@ void switchFile(int fileList)
 
 	case 2:
 		conColor(8);
-		std::cout << "\t\n- Downloading Azul Zulu JDK (17.0.3+7)";
+		std::cout << "\t\n- Downloading Azul Zulu JDK (17.34.19)";
 
 		URLDownloadToFile(NULL, srcFiles[5], destFiles[5], 0, NULL);
 		std::system("start zulu17.34.19-ca-jdk17.0.3-win_x64.msi");
