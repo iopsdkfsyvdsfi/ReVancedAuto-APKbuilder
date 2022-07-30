@@ -13,46 +13,49 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Files">
-      <UniqueIdentifier>{16c090c4-f0cc-41b8-a277-5d7e0647b15f}</UniqueIdentifier>
+    <Filter Include="programrestart">
+      <UniqueIdentifier>{73587207-e540-402b-9fa8-95290accb7d6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\main">
-      <UniqueIdentifier>{39763b25-eeaf-4801-808a-bf14b2363cb1}</UniqueIdentifier>
+    <Filter Include="Source Files\ReVancedAPKBuilder">
+      <UniqueIdentifier>{b92b4f0e-8633-466d-ad3f-ffca72289d77}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Error Input Handling">
-      <UniqueIdentifier>{65b24548-4144-431c-9063-bd141898dee1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\AutoUpdate">
+    <Filter Include="Source Files\ReVancedAPKBuilder\AutoUpdate">
       <UniqueIdentifier>{f247286c-2cd4-4b53-af42-695d8420b167}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\conColor">
+    <Filter Include="Source Files\ReVancedAPKBuilder\conColor">
       <UniqueIdentifier>{9142e5a6-5d8c-4df0-acca-c5a9ab0512bd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\patches">
+    <Filter Include="Source Files\ReVancedAPKBuilder\Files">
+      <UniqueIdentifier>{16c090c4-f0cc-41b8-a277-5d7e0647b15f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ReVancedAPKBuilder\main">
+      <UniqueIdentifier>{39763b25-eeaf-4801-808a-bf14b2363cb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ReVancedAPKBuilder\patches">
       <UniqueIdentifier>{1a0b69d3-21e6-4fdc-a25c-3d813a42e9d2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="restartprogram">
-      <UniqueIdentifier>{73587207-e540-402b-9fa8-95290accb7d6}</UniqueIdentifier>
+    <Filter Include="Source Files\ReVancedAPKBuilder\errorInputHandling">
+      <UniqueIdentifier>{65b24548-4144-431c-9063-bd141898dee1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="files.cpp">
-      <Filter>Source Files\Files</Filter>
+      <Filter>Source Files\ReVancedAPKBuilder\Files</Filter>
     </ClCompile>
     <ClCompile Include="ReVancedAPKBuilder.cpp">
-      <Filter>Source Files\main</Filter>
+      <Filter>Source Files\ReVancedAPKBuilder\main</Filter>
     </ClCompile>
     <ClCompile Include="errorInputHandling.cpp">
-      <Filter>Source Files\Error Input Handling</Filter>
+      <Filter>Source Files\ReVancedAPKBuilder\errorInputHandling</Filter>
     </ClCompile>
     <ClCompile Include="lastVersionPort.cpp">
-      <Filter>Source Files\AutoUpdate</Filter>
+      <Filter>Source Files\ReVancedAPKBuilder\AutoUpdate</Filter>
     </ClCompile>
     <ClCompile Include="patches.cpp">
-      <Filter>Source Files\patches</Filter>
+      <Filter>Source Files\ReVancedAPKBuilder\patches</Filter>
     </ClCompile>
     <ClCompile Include="restartprogram.cpp">
-      <Filter>restartprogram</Filter>
+      <Filter>programrestart</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -60,22 +63,22 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="files.h">
-      <Filter>Source Files\Files</Filter>
+      <Filter>Source Files\ReVancedAPKBuilder\Files</Filter>
     </ClInclude>
     <ClInclude Include="errorInputHandling.h">
-      <Filter>Source Files\Error Input Handling</Filter>
+      <Filter>Source Files\ReVancedAPKBuilder\errorInputHandling</Filter>
     </ClInclude>
     <ClInclude Include="lastVersionPort.h">
-      <Filter>Source Files\AutoUpdate</Filter>
+      <Filter>Source Files\ReVancedAPKBuilder\AutoUpdate</Filter>
     </ClInclude>
     <ClInclude Include="consoleColor.h">
-      <Filter>Source Files\conColor</Filter>
+      <Filter>Source Files\ReVancedAPKBuilder\conColor</Filter>
     </ClInclude>
     <ClInclude Include="patches.h">
-      <Filter>Source Files\patches</Filter>
+      <Filter>Source Files\ReVancedAPKBuilder\patches</Filter>
     </ClInclude>
     <ClInclude Include="restartprogram.h">
-      <Filter>restartprogram</Filter>
+      <Filter>programrestart</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
