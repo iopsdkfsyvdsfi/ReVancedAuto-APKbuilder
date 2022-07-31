@@ -55,7 +55,7 @@ void switchFile(int fileList)
 	case 4:
 		conColor(8);
 		std::cout << "\t\n- Downloading YouTube 17.29.34.apk";
-		URLDownloadToFile(NULL, Files::srcYoutubeAPK , Files::srcYoutubeAPK, 0, NULL);
+		URLDownloadToFile(NULL, Files::srcYoutubeAPK, Files::destYoutubeAPK, 0, NULL);
 
 		conColor(8);
 		std::cout << "\t\n- Downloading Vanced MicroG (0.2.24.220220)";

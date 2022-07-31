@@ -11,7 +11,7 @@
 
 struct pInput
 {
-   char p[28];
+   char p[29];
    char pMusic[12];
 };
 
@@ -43,6 +43,7 @@ enum Patches
     sponsorblock,
     forceVP9Codec,
     rememberVideoQuality,
+    settings
 };
 
 enum ytmPatches
@@ -89,6 +90,7 @@ std::string_view getPatchName(Patches patches)
         case sponsorblock: return "Sponsorblock: ";
         case forceVP9Codec: return "Force VP9 Codec: ";
         case rememberVideoQuality: return "Remember Video Quality: ";
+        case settings: return "Settings: ";
     }
 }
 
@@ -96,16 +98,16 @@ std::string_view getYTMPatchNames(ytmPatches ytmPatches)
 {
     switch (ytmPatches)
     {
-    case minimizedPlaybackMusic: return "Minimized Playback Music: ";
-    case tasteBuilderRemover: return "Tastebuiler Remover: ";
-    case hideGetPremium: return "Hide Get Premium: ";
-    case compactHeader: return "Compact Header: ";
-    case upgradeButtonRemover: return "Upgrade Button Remover: ";
-    case backgroundPlay: return "Background Play: ";
-    case musicMicroGSupport: return "YTM MicroG Support: ";
-    case musicVideoAds: return "YTM Video Ads: ";
-    case codecsUnlock: return "Codecs Unlock: ";
-    case exclusiveAudioPlayback: return "Exclusive Audio Playback: ";
+        case minimizedPlaybackMusic: return "Minimized Playback Music: ";
+        case tasteBuilderRemover: return "Tastebuiler Remover: ";
+        case hideGetPremium: return "Hide Get Premium: ";
+        case compactHeader: return "Compact Header: ";
+        case upgradeButtonRemover: return "Upgrade Button Remover: ";
+        case backgroundPlay: return "Background Play: ";
+        case musicMicroGSupport: return "YTM MicroG Support: ";
+        case musicVideoAds: return "YTM Video Ads: ";
+        case codecsUnlock: return "Codecs Unlock: ";
+        case exclusiveAudioPlayback: return "Exclusive Audio Playback: ";
     }
 }
 
@@ -202,6 +204,9 @@ void patchesExclude()
    
         if (patchInput->p[9] == 'e' || patchInput->p[9] == 'E')
             patchCmds += " -e enable-debugging";
+        
+        if (patchInput->p[9] == 'i' || patchInput->p[9] == 'i')
+            patchCmds += " -i enable-debugging";
 
         std::cout << "Exclude [11] | ";
         std::cout << getPatchName(oldQualityLayout);
@@ -333,6 +338,14 @@ void patchesExclude()
 
         if (patchInput->p[25] == 'e' || patchInput->p[25] == 'E')
             patchCmds += " -e remember-video-quality";
+
+        std::cout << "Exclude [27] | ";
+        std::cout << getPatchName(settings);
+        std::cin >> patchInput->p[26];
+        ignoreLine();
+
+        if (patchInput->p[26] == 'e' || patchInput->p[26] == 'E')
+            patchCmds += " -e settings";
 
     conColor(12);
     std::cout << "\t\t\t\nThe following argument will be used\n";

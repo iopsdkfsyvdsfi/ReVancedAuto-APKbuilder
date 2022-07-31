@@ -31,9 +31,7 @@ void lvMain()
 	} while (input != 'y' && input != 'n');
 
 	if (input == 'y' || input == 'Y')
-	{
 		jpInstall();
-	}
 
 	std::cout << '\n' << '\n';
 
