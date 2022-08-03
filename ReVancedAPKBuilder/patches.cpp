@@ -205,7 +205,7 @@ void patchesExclude()
         if (patchInput->p[9] == 'e' || patchInput->p[9] == 'E')
             patchCmds += " -e enable-debugging";
         
-        if (patchInput->p[9] == 'i' || patchInput->p[9] == 'i')
+        if (patchInput->p[9] == 'i' || patchInput->p[9] == 'I')
             patchCmds += " -i enable-debugging";
 
         std::cout << "Exclude [11] | ";
@@ -387,7 +387,7 @@ void ytmPatchesExclude()
 
     if (input == 'y' || input == 'Y')
     {
-        std::string patchCmds{ "java -jar revancedCLI.jar -a youtubemusic.apk -c -o revancedmusic.apk -b revancedPatches.jar -m revancedIntegrations.apk -e swipe-controls -e seekbar-tapping -e minimized-playback -e amoled -e disable-create-button -e hide-cast-button -e return-youtube-dislike -e hide-autoplay-button -e premium-heading -e custom-branding -e disable-fullscreen-panels -e old-quality-layout -e hide-shorts-button -e hide-watermark -e sponsorblock -e enable-wide-searchbar -e force-vp9-codec -e always-autorepeat -e microg-support -e enable-debugging -e custom-playback-speed -e hdr-auto-brightness -e remember-video-quality -e video-ads -e general-ads -e hide-infocard-suggestions -e timeline-ads -e general-reddit-ads" };
+        std::string patchCmds{ "java -jar revancedCLI.jar -a youtubemusic.apk -c -o revancedmusic.apk -b revancedPatches.jar -m revancedIntegrations.apk -e swipe-controls -e seekbar-tapping -e minimized-playback -e amoled -e disable-create-button -e hide-cast-button -e return-youtube-dislike -e hide-autoplay-button -e premium-heading -e custom-branding -e disable-fullscreen-panels -e old-quality-layout -e hide-shorts-button -e hide-watermark -e sponsorblock -e enable-wide-searchbar -e force-vp9-codec -e always-autorepeat -e microg-support -e enable-debugging -e custom-playback-speed -e hdr-auto-brightness -e remember-video-quality -e video-ads -e general-ads -e hide-infocard-suggestions -e timeline-ads -e general-reddit-ads -e custom-video-buffer -e settings" };
         std::cout << '\n';
 
         conColor(10);
@@ -522,7 +522,7 @@ void ytmPatchesExclude()
     }
    
     // default 
-    std::string patchCmds{ "java -jar revancedCLI.jar -a youtubemusic.apk -c -o revancedmusic.apk -b revancedPatches.jar -e swipe-controls -e seekbar-tapping -e minimized-playback -e amoled -e disable-create-button -e hide-cast-button -e return-youtube-dislike -e hide-autoplay-button -e premium-heading -e custom-branding -e disable-fullscreen-panels -e old-quality-layout -e hide-shorts-button -e hide-watermark -e sponsorblock -e enable-wide-searchbar -e force-vp9-codec -e always-autorepeat -e microg-support -e enable-debugging -e custom-playback-speed -e hdr-auto-brightness -e remember-video-quality -e video-ads -e general-ads -e hide-infocard-suggestions -e timeline-ads -e general-reddit-ads -i background-play -i exclusive-audio-playback -i codecs-unlock -i upgrade-button-remover -i tasteBuilder-remover -i minimized-playback-music -i hide-get-premium -i music-video-ads -i music-microg-support -i compact-header" };
+    std::string patchCmds{ "java -jar revancedCLI.jar -a youtubemusic.apk -c -o revancedmusic.apk -b revancedPatches.jar -e swipe-controls -e seekbar-tapping -e minimized-playback -e amoled -e disable-create-button -e hide-cast-button -e return-youtube-dislike -e hide-autoplay-button -e premium-heading -e custom-branding -e disable-fullscreen-panels -e old-quality-layout -e hide-shorts-button -e hide-watermark -e sponsorblock -e enable-wide-searchbar -e force-vp9-codec -e always-autorepeat -e microg-support -e enable-debugging -e custom-playback-speed -e hdr-auto-brightness -e remember-video-quality -e video-ads -e general-ads -e hide-infocard-suggestions -e timeline-ads -e general-reddit-ads -e custom-video-buffer -e settings -i background-play -i exclusive-audio-playback -i codecs-unlock -i upgrade-button-remover -i tasteBuilder-remover -i minimized-playback-music -i hide-get-premium -i music-video-ads -i music-microg-support -i compact-header" };
     conColor(12);
     std::cout << "\t\t\t\nThe following argument will be used\n";
     std::cout << "\t\t-------------------------------------\n";
