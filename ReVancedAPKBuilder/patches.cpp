@@ -41,7 +41,6 @@ enum Patches
     disableCreateButton,
     hideWatermark,
     sponsorblock,
-    forceVP9Codec,
     rememberVideoQuality,
     settings
 };
@@ -88,7 +87,6 @@ std::string_view getPatchName(Patches patches)
         case disableCreateButton: return "Disable Create Button: ";
         case hideWatermark: return "Hide Watermark: ";
         case sponsorblock: return "Sponsorblock: ";
-        case forceVP9Codec: return "Force VP9 Codec: ";
         case rememberVideoQuality: return "Remember Video Quality: ";
         case settings: return "Settings: ";
     }
@@ -321,30 +319,19 @@ void patchesExclude()
             patchCmds += " -e sponsorblock";
 
         std::cout << "Exclude [25] | ";
-        std::cout << getPatchName(forceVP9Codec);
+        std::cout << getPatchName(rememberVideoQuality);
         std::cin >> patchInput->p[24];
         ignoreLine();
 
         if (patchInput->p[24] == 'e' || patchInput->p[24] == 'E')
-            patchCmds += " -e force-vp9-codec";
-
-        if (patchInput->p[24] == 'i' || patchInput->p[24] == 'I')
-            patchCmds += " -i force-vp9-codec";
+            patchCmds += " -e remember-video-quality";
 
         std::cout << "Exclude [26] | ";
-        std::cout << getPatchName(rememberVideoQuality);
+        std::cout << getPatchName(settings);
         std::cin >> patchInput->p[25];
         ignoreLine();
 
         if (patchInput->p[25] == 'e' || patchInput->p[25] == 'E')
-            patchCmds += " -e remember-video-quality";
-
-        std::cout << "Exclude [27] | ";
-        std::cout << getPatchName(settings);
-        std::cin >> patchInput->p[26];
-        ignoreLine();
-
-        if (patchInput->p[26] == 'e' || patchInput->p[26] == 'E')
             patchCmds += " -e settings";
 
     conColor(12);
